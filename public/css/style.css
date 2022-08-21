@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+body {
+  background-color: #3d3c3c;
+  font-family: 'Patrick Hand', cursive;
+
+}
+@font-face {
+    font-family: DS-Digital;
+    src: url("../fonts/DS-Digital/DS-DIGI.TTF");
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timer {
+  font-family: "DS-Digital";
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #000 solid;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: red solid 2px;
+}
+.centerContainer {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textBox {
+  color: #fff;
+  background-color: #408900;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  border: solid #ffae00 15px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+  box-shadow: 5px 5px 5px 0.5px black;
+}
+.input {
+  width: 100%;
+  display: flex;
+  align-items: left;
+}
+.data {
+  width: 100%;
+  font-size: 20px;
+  font-family: 'Patrick Hand', cursive;
+
+  color: white;
+  background-color: #808080;
+  border-radius: 10px;
+  border: #fff 1px solid;
+  outline: none;
+  padding: 10px;
+}
+.data:disabled{
+    opacity: 0;
+}
+.textReset {
+  padding: 20px;
+}
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.textResult {
+  color: #808080;
+}
