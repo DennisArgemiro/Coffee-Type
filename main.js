@@ -14,7 +14,5 @@ app.use(Express.static("public"));
 
 app.use(Express.urlencoded({ extended: true, limit: "50mb" }));
 
-http.createServer(app.use("/", homeController)).listen(8080, () => {
-  console.log("Ok!");
-});
+app.use("/", homeController)
 

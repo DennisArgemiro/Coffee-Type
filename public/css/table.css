@@ -1,6 +1,6 @@
 .table{
     display: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     right: 0;
@@ -23,26 +23,26 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #fff;
-    width: 70%;
+    background-color: #00FF88;
+    width: 50%;
     height: 50%;
-    border-radius: 15px;
-    background-color: #408900;
-    border: #ffae00 solid 15px;
-    color: #fff;
+
+    background-color: #09070C;
+    border: #00FF88 solid 5px;
+    color: #00FF88;
 }
 .title{
     font-size: 30px;
 }
 .resetTest{
-    background-color: rgb(255, 65, 65);
-    color: #fff;
+    background-color: #00ff88;
+    color: #09070c;
     cursor: pointer;
-    border: none;
+    border: solid #00ff88 1px;
     text-decoration: none;
     width: 100px;
     height: 50px;
     margin: 20px;
     font-size: 20px;
-    border-radius: 15px;
+    font-weight: bold;
 }
