@@ -1,6 +1,7 @@
 const Express = require("express");
 const http = require("http");
 const cors = require("cors");
+const port = process.env.PORT || 3000
 
 const homeController = require("./controllers/home");
 
@@ -14,5 +15,6 @@ app.use(Express.static("public"));
 
 app.use(Express.urlencoded({ extended: true, limit: "50mb" }));
 
-app.use("/", homeController)
-
+app.listen(port, ()=>{
+  app.use("/", homeController)
+})
