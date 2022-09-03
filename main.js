@@ -1,7 +1,7 @@
 const Express = require("express");
 const http = require("http");
 const cors = require("cors");
-const port = process.env.PORT || 3000
+const port = 3000
 
 const homeController = require("./controllers/home");
 
