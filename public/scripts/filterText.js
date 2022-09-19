@@ -1,21 +1,5 @@
 const text = document.querySelector("#text");
 export const txt = text.innerText
-const bufferText = text;
-var list = bufferText.innerText.split(" ");
-
-start()
-
-export function start(){
-  var listTwo = [];
-  text.innerText = "";
-  var rnd = "";
-  document.querySelector("#input").value = ""
-
-  for (let i = 0; i <= 40; i++) {
-    text.innerHTML +=
-      removeSC(list[Math.floor(Math.random() * list.length)]) + " ";
-  }
-}
 
 export function removeSC(word) {
   const check = word.split("");
