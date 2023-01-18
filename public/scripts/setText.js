@@ -4,7 +4,6 @@ const table = document.querySelector(".table");
 const text = document.querySelector("#text");
 const newWord = document.querySelector("#nextWord");
 const modal = document.querySelector("#meuModal");
-var content = ""
 import { timer } from "./timer.js";
 import { removeSC } from "./filterText.js";
 
@@ -14,6 +13,12 @@ var wordWrong = 0;
 var wordMin = 0;
 
 var isStarted = false;
+
+var content = ""
+
+async function setContent(){
+  return content = await getTextByAPI()
+}
 
 window.addEventListener("load", letsStart)
 
@@ -27,34 +32,33 @@ data.addEventListener("keyup", async () => {
   
 });
 
+async function getTextByAPI(){
+  // Esta função pega o texto via API
+  const response =(await(await fetch("https://api-coffee-type.vercel.app/api/setText")).json()).text
+  return response
+}
 
-fetch("https://api-coffee-type.vercel.app/api/setText")
-  .then((data) => {
-    return data.json();
-  })
-  .then((data) => {
-    setTextOnVariable(data.text)
-  });
-export function letsStart() {
+export async function letsStart() {
+    await setContent()
     setText(getText(content))
   }
 
-function setTextOnVariable(variable){
-  content = variable
-}
 
 
-function getText(text){
+function getText(text = ""){
+  // Esta função separa o texto em palavras, embaralha e remove caracteres especias
   const wordList = text.split(" ");
   const listText = []
       for (let i = 0; i <= 20; i++) {
         listText.push(removeSC(wordList[Math.floor(Math.random() * wordList.length)]+ " "))
       }
       const texto =listText.join(" ")
+      console.log(texto)
       return texto
 }
 
 function setText(content){
+  // Esta função separa o texto em palavras, coloca uma nova palavra para ser digitada e remove da lista
   const listContent = content.split(" ")
   newWord.innerText = listContent[0];
   listContent.shift()
@@ -67,8 +71,10 @@ function myfunction(content) {
   const word = text.innerText.split(" ");
   const newText = newWord.innerHTML;
   const list = data.value.split("");
+
   list.forEach((letter) => {
     const input = list.join("");
+
     if (letter == " ") {
       validateWord(input.trim(), newText);
       data.value = "";
@@ -77,7 +83,7 @@ function myfunction(content) {
       text.innerText = word.join(" ")   
       result.innerText = "Normal";
       result.style.color = "#808080"
-console.log( content.split(" ")[Math.floor(Math.random() * content.split(" ").length)] + " ")
+      console.log( content.split(" ")[Math.floor(Math.random() * content.split(" ").length)] + " ")
       text.innerHTML +=" " + removeSC(content.split(" ")[Math.floor(Math.random() * content.split(" ").length)])
     } else {
       validateData(input,newText);
